@@ -16,7 +16,7 @@ spec:
       - name: app1
         image: gcr.io/google-samples/hello-app:1.0
         ports:
-        - containerPort: 81
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -26,7 +26,7 @@ metadata:
     app: app1
 spec:
   ports:
-  - port: 81
+  - port: 80
   selector:
     app: app1
 ---
@@ -48,7 +48,7 @@ spec:
       - name: app2
         image: gcr.io/google-samples/hello-app:2.0
         ports:
-        - containerPort: 82
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -58,7 +58,7 @@ metadata:
     app: app2
 spec:
   ports:
-  - port: 82
+  - port: 80:
   selector:
     app: app2
 ---
